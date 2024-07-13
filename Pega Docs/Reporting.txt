@@ -1,0 +1,106 @@
+Reporting
+*process of presenting data from the Pega database.
+ following efficient ways to gather application data for interpretive purposes
+1)traditional :-present data as extensive list reports that provide detailed infor:-mation in columns.
+2)insights( data visualization ):- present data as interactive charts
+
+example:
+A customer service manager can use reports to track the number of customer tickets opened and closed each month, as well as the average time it takes to resolve tickets.
+
+Report categories:-distinguish reports from each other by organizing them into categories.
+report category create in report browser.
+
+i)Analyze Performance
+ii)Analyze Quality
+iii)Case Metrics
+iv)Monitor Assignments
+v)Monitor Processes
+vi)Open Cases
+vii)Predictive Model Monitoring
+viii)Service Level Performance
+ix)Step Performance
+
+Report types:-two types of reports: summarized reports, and list reports.
+i)summarized reports:- discover the number of specific events that occur in your application.
+ For example, you can view the total number of days that a team required to complete a task.
+
+it can use following built in function to display the data:-
+Count
+The count of rows with a non-null value in a column.
+Count distinct
+The count of unique values in a column.
+Sum
+The total number of specific data items.
+Avg
+The average number of specific data items.
+Min
+The lowest value in a column.
+Max
+The highest value in a column.
+
+
+ii)List reports
+List reports help you analyze extensive data in a clear and compact way. 
+For example, you can create a list of all open cases to verify the remaining workload.
+
+Report Browser:-
+Report Browser provides access to all reports that are available to you. 
+You can use this interface to search for a report about resolved cases, and open that report to asses user performance.
+
+Report Browser features
+
+Run reports.
+Create custom reports and modify copies of the existing reports.
+Edit report details.
+Move reports to different categories.
+Delete reports from the system.
+Search, filter, and sort reports.
+Share reports with others.
+Schedule reports to run at a certain time, or on a recurring basis at regular intervals.
+
+Creating a report
+click dev-class-report-report definition-colums-filter-report browser.
+
+Report structure:- creating the report definition rule 
+and adding columns. 
+i)Report columns:- each column corresponds to a 
+single data element. 
+Calculations and functions are also used.
+
+ii)Filters:-A filter is a test applied to each record to determine whether it should be included in a 
+report.
+filter types:-
+i)filtering condition, compare an explicit value
+ii)multiple filters with AND/OR conditions in order to create a more complex filter.
+
+Reporting datatypes:-
+1)summary report:-shows the data in summary formate.
+2)chart:-adding charts
+3)Sort report:-table formate and Sort column values.
+
+
+Report definition
+i)A report definition is a type of rule in Pega that interacts with databases and 
+retrieves information based on business needs.
+ii)Rule instances of class Rule-Obj-Definition
+
+data access:-
+Report Definition > Data Access > General Data Access > Data retrieval.
+methods for retrieving data:-
+1)elasticsearch
+2)database
+
+
+Optimizing reports
+improve report performance through a process called optimization.
+To store case data, Pega writes to a BLOB field(binary large object (BLOB) field).
+Pega uses the contents of a BLOB column in a table to extract data from the case when 
+it’s opened.
+
+Guardrail warnings:-Reports that use an unoptimized property display a warning that states the potential 
+impact on performance.
+
+
+
+ 
+ 

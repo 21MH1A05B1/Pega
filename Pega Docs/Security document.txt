@@ -1,0 +1,15 @@
+Security:
+Pega Platform protects you against a wide variety of adverse security risks, whether accidental or malicious by using the features of authentication, authorization, and auditing to protect and monitor the use of your application.
+Application and data security are major concerns for information technology organizations.
+Importance and Goal of Security:
+Security failures can expose your organization to severe consequences, such as a negative perception of your organization’s reputation, customer loss, lack of customer trust, and potential legal and financial penalties.
+The goal of security is to maintain availability, integrity, and confidentiality. This goal is primarily accomplished by implementing authentication, authorization, and auditing. When confidentiality is compromised, unauthorized individuals gain access to systems or data. When integrity is compromised, unauthorized individuals can modify systems or data. 
+
+Topics covered in questions
+1.Rule based access control
+2.Access groups and access roles
+3. access manager
+
+Questions:
+1. By default how many roles does pega consists?
+-----> By default four roles will be generated when creating an application: Admin, Author, User, and manager.

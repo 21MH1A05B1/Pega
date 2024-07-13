@@ -1,0 +1,192 @@
+                                          Service-level agreement
+                                          -----------------------
+
+Service-level agreements:
+------------------------
+A service-level agreement (SLA) establishes a work completion deadline. Organizations often establish service-level agreements to enforce on-time performance. These obligations range from informal response-time promises to negotiated contracts. 
+Service-level intervals:
+------------------------
+Each service-level agreement supports a few intervals of time that standardize how long you have to perform a task or resolve a case.
+Consider a company's timesheet submission requirements. Employees must submit a timesheet within two business days of the workweek's end but no later than three business days.
+Types of service-level agreements:
+----------------------------------
+You can configure SLAs on case types, stages, processes, and Collect Information and Approval steps. SLAs are most often applied at the case or step level, but having more points to add urgency or escalation actions may be of interest depending on the business case. When you apply SLAs at different levels, you need to consider all SLAs when determining intervals.
+1.Case-level SLA:
+  With SLAs configured on a case type, the service-level timing begins when a case is created (or recently reopened) and stops when the case is resolved.
+
+  For example, you configure an SLA with a goal of 60 hours and deadline of 72 hours. If a prospective customer does not receive a quote within 72 hours,
+  the case is considered late. The case-level SLA should be used to define the stage, process, and assignment-level SLAs.
+2.Stage-level SLA:
+  With SLAs defined on a stage, the service-level timing begins when a case enters the stage and ends when the case leaves the stage.
+
+  For example, you configure an SLA on the Quote Creation and Presentation stage with a goal of 12 hours and a deadline of 24 hours. The SLA ensures that     
+  the quote is generated and that the customer receives email notification within 24 hours of quote approval
+3.Process-level SLA:
+  With SLAs defined on a process, the service-level timing begins when the process is called and ends when the last step in the process completes.
+
+  For example, you configure an SLA on the Review Request process with a goal of 24 hours and a deadline of 48 hours. The SLA ensures that underwriters    
+  assigned to a specific quote complete both the review request assignment and request approval in 48 hours or less from the quote request submission date.    
+  The process-level SLA should be used to define the assignment-level SLAs.
+4.Assignment-level SLA
+  With SLAs configured on Collect Information steps, the service-level timing begins when an assignment is created and ends after assignment completion.
+  For example, in the quote request case, you configure an SLA on the Review request assignment with a goal of 12 hours and a deadline of 24 hours. The SLA    
+  ensures that underwriters review the request within 24 hours of receiving the request; otherwise, the assignment is late.
+5.Approval-level SLA
+  With SLAs configured on Approval steps, the service-level timing begins when the approval is called and ends after the approval completion.
+  For example, in the quote request case, you define an SLA on the Approve request step with a goal of 12 hours and deadline of 24 hours. The SLA ensures a
+  that underwriters approve the request within 24 hours of completing the review.
+
+Escalation actions:
+-------------------
+Escalation actions are actions that your application takes to facilitate faster resolution times based on a specified service-level agreement. You can configure escalation actions on service-level agreements to:
+Notify the assignee, the manager, and the participants.
+Reassign the task.
+Resolve the case as the goals or deadlines occur.
+ 
+Work prioritization:
+--------------------
+In Pega Platform™, work is prioritized based on urgency. Depending on your business requirements, you can prioritize work based on deadlines.
+
+Urgency-based prioritization:
+-----------------------------
+Urgency is a numeric value that brings visibility to the unresolved work in your application. There are two primary types of urgency: 
+Case urgency is the priority of the case. For example, in a parent case type for managing hospital patient records, a child case for updating current records may have a higher priority than a child case for transferring previous records. 
+Assignment urgency is the priority of completing an assignment. For example, collecting information on a new patient may have a lower priority than sending a prescription for an existing patient. 
+The initial urgency of an assignment is equal to the case urgency value. By default, case urgency is 10. 
+For each interval, you define a value between 1 and 100 by which to increase the urgency. The maximum urgency is 100. The higher the urgency value, the more important it is to address that work item.
+
+Assignment priority:
+--------------------
+In Pega Platform applications, assignment urgency indicates assignment priority.
+The Pega Platform Get Next Work functionality assigns high-urgency tasks before low-urgency tasks to ensure that assignments finish on time. Get Next Work favors the assignment with the greatest urgency between two or more assignments that users can perform.
+
+Deadline-based prioritization:
+------------------------------
+Many organizations find it beneficial to make SLAs deadline-focused rather than urgency-focused. For some case types, time-based deadlines, rather than urgency deadlines, provide the most important information you need to prioritize work. For example, multiple Mortgage loan case types can be prioritized solely based on when they are submitted. 
+Consider a software license purchasing case type. Multiple case instances are created at different times. A customer service representative (CSR) works on multiple assignments for each case, while the purchasing and manager roles have one assignment for each case. In the following image, click the + icons to learn how deadline-based assignment prioritization works with three case instances with different creation times.
+
+Question on SLA topic.
+----------------------
+1. what is the purpose of the SLA?----------------------------------------------to ensure the timely completion of the assignment or the work
+2. which rule type is used in pega to ensure timely completion of the work ?
+ans : ---------------------------------------------------------------------------------------SLA
+3. SLA belongs to _______ rule category
+ans: ----------------------------------------------------------------------------------------Process
+4. SLA is a rule type ------------------------------------------------------------------- True 
+5. what are the SLA milestones ? ------------------------------------------------------START, GOAL , DEADLINE, PDL
+6. _____ milestone indicates that task should be completed
+ans:------------------------------------------------------------------------------------------ Goal
+7. _____ milestone indicates that task must be completed
+ans: ----------------------------------------------------------------------------------------Deadline
+8. Both goal and deadline begin from START  ------------------------------------------ True
+9. Both goal and deadline start at the same time -------------------------------------- True
+10. Goal and deadline can repeat -------------------------------------------------------  False
+11. _____ milestone starts from deadline
+ans: ---------------------------------------------------------------------------------------passed deadline 
+12. passed deadline interval is measured from _________
+ans:----------------------------------------------------------------------------------------- Deadline
+13. Passed deadline can repeat for 'n' number of times - ------------------------------True
+14. passed deadline configuration can be only done in Dev Studio --------------------- True
+15. Sam is working on the purchase car application
+according the requirement, the customer request must be 
+processed with 5 days. Here sam should set _______ to 5 days
+ans: ---------------------------------------------------------------------------------------Deadline
+16. Given the below requriement
+Goal -  1 day, Urgency=5
+Deadline - 2 day, urgency =10
+PDL  -1 day, urgency = 5
+Assume the case starts with the initial urgency as 15, what is the total urgency value after the PDL is completed?
+
+START	G	DL	PDL
+15	20	30	35
+ans: 35
+
+17. Given the below requriement
+Goal -  1 day, Urgency=5
+Deadline - 2 day, urgency =10
+PDL  -1 day, urgency = 5
+Assume the case starts with the initial urgency as 15 on 18th march 4.00 PM.what is the total urgency value when the case reaches the assignment on 20th march 1.00 PM?
+
+START			G		DL
+18th march 4.00PM 19th mar 4.00 PM	20th mar 4.00 PM
+15			20		30
+
+ans: 20
+
+17. Given the below requriement
+Goal -  1 day, Urgency=5
+Deadline - 2 day, urgency =10
+PDL  -1 day,Limit=3 urgency = 5
+Assume the case starts with the initial urgency as 15 on 18th march 4.00 PM.what is the total urgency value when the case reaches the assignment on 22nd march 2.00 PM?
+
+
+start		G		DL			PDL (L=1)
+18th mar 4.00 PM	19th mar 4.00 PM	20th mar 4.00 PM		21st mar 4.00 PM
+15		20		30			35
+
+PDL(L=2)
+22nd mar 4.00 PM
+40
+
+ans: 35
+
+18. The case started with the initial delay of 5 hours.  case started on 20th Jan 5.00 AM
+Given the urgency values
+G = 2 hours, URG=15
+DL = 4 hours, URG=5
+PDL = 1 hour, URG=10
+given the initial urgency of the case as 10, and the case urgency as 15, what is the total urgency on 
+21st jan 5.00 AM?
+
+Case starts	delay		 	G			DL
+20th Jan 5.00 AM	20th Jan 10.00 AM		20th jan 12.00 PM		20th jan 2.00 PM
+		15+10=25			40			45
+
+PDL
+20th jan 3.00 PM
+55
+
+on 21st jan 5.00 AM , value is 55
+
+19. In SLA , every work is based on _________
+ans: ------------------------------------------------------------------------------Urgency or assignment priority
+20. range of the urgency value is :-------------------------------------------- 0 to 100
+21. What is the max urgency value that the case can reach ? --------------100
+21. if in a assignment, after reaching the deadline the urgency value reached 100. still we have PDL to be completed. in this case what pega will do?
+	------------------------------------------------------------------------------pega will continue the case, but the urgency value remains at 100.
+22. In a Leave request application, the entire leave request case must be completed within 2 days.
+where can we apply SLA?
+
+on a stage
+on a process
+on a case type
+on a step
+ans: ---------------------------------------------------------------------------------on the case type
+
+23. we can apply SLA at 5 levels - case level, Stage level , process, assignment level ,approval level
+24. in the interview app, the candidate must upload the resume in 5 minutes. in this scenario, we can apply SLA on ?
+
+on a stage
+on a process
+on a case type
+on a step
+ans: ----------------------------------------------------------------------------------- a step
+
+25. Where we can apply the case level SLA? --------------------------------------case type -> settings
+26. Initial urgency value of the case is --------------------------------------------0.
+27. Even after the deadline is reached, the task is not yet completed. now we neeed to notify the manager that the task is not completed
+for this we need to use _________
+ans: ----------------------------------------------------------------------------------Escalation action 
+
+Escalaton action are used to notify assignee, manager, participants about task not completed.
+here manager can re-assign the work to some one else to perform the task.
+
+28. To pick the work that has the highest urgency or priority , pega uses _________ Algorithm
+ans: ---------------------------------------------------------------------------------GetNextWork.
+30. PAssed interval repeats - True
+31. Passed intervals begins form _________
+ans: end of the deadline
+32. Both goal and deadline begins from ___________
+ans: START
+
+

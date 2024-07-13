@@ -1,0 +1,88 @@
+DATA PAGES:
+------------
+
+*** Datapage is formerly called as Declarepage.
+
+It is an ondemand data access.
+
+1)What is the data pages in Pega?
+A.Data Pages are used to retrieve the data from internal database.Data pages hit the data base only one time.Data Pages has cache mechanism which identifies whether the data is there on the clipboard or not,if it is there it directly uses the data and it will not hit the data base again and again.
+
+2)What is the use of data pages?
+A Data pages hit the data base only one time.Data Pages has cache mechanism which identifies whether the data is there on the clipboard or not,if it is there it directly uses the data and it will not hit the data base again and again.
+
+
+3)How many modes of datapages we have?
+3 Modes:
+1.Read-only - data is loaded into datapage and cannot be modified.(at the time of transactions.)
+2.Editable - we can edit/update the values. It doesnot have the refresh strategy.         
+3.Savable - it is used to save the data to the system of records without using any activity.
+
+
+4)Explain the scope of datapage?
+Scope is the availabity of the datapage.
+3 Scopes 
+1.Node  - All the users can access the datapage within the same organization.
+2.Requestor  - the person who sent a request to access the data can be able to access the data.
+3.Thread - the user of a particular case can access the data.
+
+
+5)What is Refresh strategy in datapage?
+In load management we have loaded some data and we need to update it.In Refresh Strategy based on the conditions(or based on number of days) a backend process will be enabled and the source will be updated with the new data. 
+If the scope of the data is thread we cannot access this refresh strategy.
+
+
+***Possible modes of datapages can be page & list [Page List].In List structure datapage it provides an additional option to configure Keyed access.
+
+7)What is Keyed page access in datapage?
+with the keyed access pattern we can make a single datapage to act as list and a page based on the key-value configuration. That means one page returns a list of items and the second one returns the information about single item in the list.
+
+
+8)What is the limit to single datapage option?
+A.Pega can maintain 1000 read-only unique instances of datapage per thread 
+
+
+9)How do we remove idle pages of datapages from clipboard?
+You can use Page-Remove for node-level, Requestor-level, Thread-level datapages. You cannot use clipboard tool to remove the datapage
+
+10)How to delete a read-only datapage using activity?
+ By calling the activity "call flush declarativepage" 
+Note: Data pages created in versions of Pega Platform before 7.1 begin with Declare_ instead of D_.
+
+** When creating a data page, a developer must provide four key pieces of information.
+
+1.The structure of the page contents
+2.The object type represented by the contents of the data page
+3.The edit mode supported by the page
+4.The scope of the data page
+5.Refresh strategy
+6.Source   
+
+11)Difference between keyed datapage and parameterized data page?
+   *Keyed datapages will not hit the database every time. it maintains a single copy in the clipboard keyed pages cannot be referenced in UI.
+   *Parameterized datapage hits the database for every parameter value. Multiple datapage instances are available & directly referred for UI.
+
+***Pega creates 3 default datapages:
+   1.Single Instance Request.
+   2.List Instance.
+   3.Savable datapage.
+12) How many structures are there in data pages and what are they?
+A.There are two types of structures in data pages
+   They are:1.Page----It is used to get single instance.
+            2.List----It is used to get multiple instance hence it is having keyed page access.
+
+13)What is a lifetime of Thread in datapage?
+A.The life time of Thread is until the caseId exists only.
+
+14)What is a lifetime of Requestor in datapage?
+A.The lifetime of Requestor is for all the caseId's in the application.
+
+15)What is a lifetime of Node in datapage?
+A.The Lifetime of a node is within the organization.Hence it is having access group option that who can access the application.
+
+16)What is function of "Clear Datapage" in datapages?
+A.If you want to see an updated datapage onto the clipboard then go to the Load Management tab and select the "Clear datapage" then you can able to see the updated page on the clipboard.
+
+17)How to configure Datapages?
+A.Right click on class-->Create->DataModel-->Datapage-->Label:Give your datapage name-->Create and open
+

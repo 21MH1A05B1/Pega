@@ -1,0 +1,63 @@
+ACTIVITIES:
+
+1. What is Activities?
+A. Activities are used to create a complex business logic. Activities are structured with one or more sequential steps. Each activity step is called as Method. By using this Activities we can create instruction steps. 
+ Activity is used to describe the logic for an automative process.
+ Activities are used to execute complex logic.
+
+
+2. When we use the Activity?
+A. Before creating the activity, we can check for the alternate rule can be used declare expressions, data transforms. If none of the condition is satisfied, then we  create a custom activities.
+ It is a procedural processing, has to be the last choice.
+
+3.What is Method in activity  and How many methods to call an Activity?
+A.  Method: methos is something which is already having predefine business logic written in java code.
+ There are 3 methods:
+    1) Call
+    2) Branch
+    3) Queue
+•	Call: It Calls Child Activity, then the Parent activity wait for child activity to get executed. Once child activity execution is completes control comes to the parent activity.
+•	Branch: It Branches Child Activity, then the Parent activity wait for child activity to get executed. Once child activity execution is completes control comes to the parent activity. Further steps after branch step will be ignored.
+•	Queue: It Queues Child activity but parent activity will  not wait for child activity get completed the parent activity and child activity executes in different threads.
+
+
+4. What is parameter in Activity?
+A. Parameters define Variables that input data or return data from activity.
+
+5. How many Steps can create in Activities?
+A. We can create Maximum 28 steps in Activity.
+ We can add more than 28 steps in activity but system will crash and the performance of the system will be decreased.
+
+6. How to call an activity?
+A. We can call one activity using another activity. We can create activity in Dev studio.
+
+7. Which activities are provided by Pega platform?
+A. Pega Platform creates standard activities to provide more granual types of processing such as calling an integration or calling a data source based on a report it is applied to @baseclass, Work_, Assign_, History_ classes.
+
+8.What is the purpose of the activity?
+A.Activity is a rule which is used to implement business logics
+
+9.Activity is create under which category?
+A.Technical
+
+10.List some basic methods of activity?
+A.1.Page -New to create user pages on clipboard
+   2. property-set perform assinment operetions
+   3. page-remove to delete pages from clipboard
+
+11.What is main drawback when we directly run the actovity??
+A. Activity data will not be gatting stored into backend.
+
+12.If it exceeding more than 28 steps , then how you create it in single activity?
+A. If the activity have more than 28 steps we can divide that activity into small activities, we can combine all those small activities to create an another activity.
+
+13.What is the main advantage of an activity?
+A. activity automates the system to support complex process to elobrate the calculations.
+
+
+
+
+
+
+ 
+ 

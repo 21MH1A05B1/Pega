@@ -1,0 +1,106 @@
+(1).What is An Agent?
+AGENTS:------>Agent is an internal background process that operates on the server that runs activities on periodic basis.Agent route work and assignment according to the rules in our               application.In a multinode cluster, an agent can run on multiple nodes. Normally, all agents start each time that you start your Pega Platform system. Agents running on a specific node start    when that node starts.
+
+(2).How many Instances avaliable in Agents?what are they?Explain In Detail.
+     Two main classes Agent can hold information about Agents
+      1. Agent schedule(Instances of Rule-Agent-Queue).
+      2. Agent Rules(Instances of Data-Agent-Queue).----->Data-Agent-QUeue:When you need to modify the behavior of an agent listed in an agents rule in a locked RuleSet (any of the               standard Process Commander agents rules, for example) you do so by editing one or more of the generated
+ 
+(3).How do we create an Agent?
+Agents are able to create in Admin and Dev Studios.
+---New a sysadmin a Agents.
+---Ruleset name is the Agent name
+---Agent is instance of Rule-Agent-Queue.
+
+
+(4).What is an an Agent Queue?
+An agent queue is a list of work to be done by an agent. Use Admin Studio to view work items in the agent queues by their status and take action on them. This information is useful for diagnosing agent processing problems.
+
+(5).How we can setup Agent notifications?
+You can enable notification on agent failure to receive emails on each occurrence of the PEGA0010 alert that is triggered when an exception occurs during agent processing.
+
+(6).What is the Default Runtime of an Agent?
+The Default runtime of an Agent will be 20 seconds.
+
+(7).What are the types of modes are avaliable in an Agent?Explain in detail.
+Actually Pega provides three modes,according to the v5.4 legacy,standard,advanced.Later v5.4 lagacy is disapproved.
+so the main modes of an agents are 1. Standard Agent
+                                   2. Advanced Agent.
+(8).Standard Agent:-Standard Agents will be applied to Agent Queue Management.
+Advanced Agent:-when an Advanced Agent wakes up at schedule time it will directly executes the Agent Activity without bothering about agent Queue items.
+
+(9).What is an Agent Queue Management(AQM)?
+This program is responsible for instructing the Agent wheather to execute associated Agent activity are not.
+
+(10).Explain about Agent Running Time Intervals?
+Each activity runs individually on its own interval schedule ,as a separate thread based on it has two running time intervals
+1. Periodic--->The agent runs the activity and then sleeps ,for the no.of seconds entered in the interval coloumn.
+2. Recurring---->The Agent runs the activity based on a specifiy calender schedule.
+
+(11).what is System Pulse in Agent?
+PRPC has a predefined master"System Pulse" ,which wakesup all the created Agents at their schedule Time.
+
+(12).Do we need to create an Agent Schedule?
+No.Agent schedule can't be created manually.The agent manager on PRPC generates atleast one Agent schedule instance for each Agent rule.
+Bydefault,The Manager checks for new or updated agents rules once for every ten minutes.After we create an Agent rule,the Agent manager generates on Agent schedule instances for each node running on your PRPC system the next time it checks for new agent rules.
+
+(13).Do we need to migrate Agent schedule to other environments?
+NO.
+
+(14).How to trace an Agent?
+To trace an agent in Pega to follow below steps. 
+1.Find out the agent in agents list.
+2.Start the Agent.
+3.Trace Now,Trace should happen with in 1 minute.
+----->Delay time = 60 sec.
+
+(15).what is the use of referring the access group in Agents?
+Agent Activity calls another Activity.This called activity may not appear in Agent rule set.So setup of the rule setlist and Roles by providing Access group in Security Tab.Select the Acces group to use for legacy and advanced Agents listed in this rule.This field is ignored with a type of standard Agent.
+
+(16).what is the Difference between Standard Agent and Advanced Agent?
+Standard Agent:---->                                                                                      
+1.When Agent wakes up, it looks up PR_SYS_QUEUE table, for an item with status Scheduled.                            
+2.Agent activity gets executed 0 – N number of times per wake up. If the queue has 10 items activity will be executed 10 times.                                                                                                      3.We are required to write only business logic. Transaction logic will be taken care by Process commander. 
+4.This mode of agent is for transactional processing.
+5.Agent activity gets executed on Requestors access group who had kept the queue item in queue table.    
+6.This agent is going to update the queue item status to “Broken-Process” if an item processing fails…
+It is going proceed processing remaining items after current item.
+
+Advanced Agent:---->
+1.Agent When wake up, it directly executes agent activity.
+2.Agent activity gets executed only once per wake up. Once activity is completed, agent will go to sleep.
+3.We need to write both business and transaction logic.
+4.This mode of agent is recommended for non transactional processing
+5.Agent gets executed on the access group mentioned in agent rule form. If we do not mention any access group, it runs on guest access group.
+6.This agent will get stopped when an exception occurs.
+
+(17).What are the Advantages or changes with job scheduler and Queue Processor when compared to Agents?
+As a part of the optimization,Pega introduced Job scheduler.
+--->Job Scheduler works as like Advanced Agent.
+--->Queue processor as Standard Agent.
+
+
+(18).Explain about Error Handling in Job Scheduler?
+Error Handling is an important factor in Job scheduler as this helps in analysing the root cause in case of failure.
+in our scenerio the scheduler bussiness logic might fail for three reasons.
+1. While fetching the list of resolved claim cases(Database connectivity issue,etc)
+2. when trying to send Email.
+3. Infrastructure Issue when executing the scheduler.
+
+(19).what are the benefits to replace the Agents by Job scheduler or Queue Processor?
+By using Job scheduler,it is more scalable,easy to use,Better performance.
+
+(20).Which agent is best for a daily report scenario?
+Advanced because The standard agent activity does not start unless there are items in the queue. If this process required queueing work, we have to choose a standard Agent.
+
+(21).When will u go for standard and when will go for advanced agent?
+Advance agent is for Non-Transactional Processing means there is no WO Processing involved in this.
+Standard agent is for transactional Processing i.e, it involves case processing.
+
+(22).what is the need of Agents?
+Agents route assignments according to the rules in your application; they also perform system work such as sending email correspondence and notifications about assignments, generating updated indexes for the full-text search feature, synchronizing caches across nodes in a multiple node system, and so on.
+
+
+
+
+

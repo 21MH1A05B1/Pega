@@ -1,0 +1,66 @@
+SUMMARY:
+*the tracer tool is a one of the debugging tool 
+*it is mainly used for the performance test of the application and it can be verified the flow,flow action,properties,case types and also the data models of the application 
+*the tracer tool should be used 1 or 2 times in the application to identify it's performance of the application . If it is more than the limit there is a chance of the application crash
+*the tracer tool is used to record the performace and the errors of the application and it can be filtered on depending on the  
+
+
+1.what is a tracer tool?
+A.The Tracer tool is a debugging tool in the Pega Platform that helps developers identify and troubleshoot issues in their applications
+ *It provides full debugging facilities, including step-by-step execution, breakpoints, and watch variables
+ *The Tracer tool logs and displays events that occur as you use Pega Platform™, allowing you to identify the source of execution errors, such as Java exceptions or incorrect property values
+
+2.for what the tracer tool is mainly used?
+A.The Tracer tool is mainly used for debugging flows, data transforms, activities, services, parse rules, and declarative rules
+ *t provides full debugging facilities, including step-by-step execution, breakpoints, and watch variables
+ *it is mainly used for the performace verification of the application
+
+3.Is using the tracer tool more can effect the application?
+A.Yes, using the Tracer tool can significantly impact application performance due to the volume of data collected for rule execution.
+*It is recommended not to use the Tracer as a performance analysis tool. However, the Tracer is a powerful tool for debugging and troubleshooting application errors.
+ 
+4.How the tracer tool is worked?
+A.It provides full debugging facilities, including step-by-step execution, breakpoints, and watch variables. You can configure trace conditions, based on the activity, Data Transform, Rule, and so on, that you are testing and debugging
+*the Tracer displays the traced events according to the selected trace conditions. Each event is a row in the Tracer window.
+*The Tracer provides a complete log of the events that occur during case processing. This log allows you to identify the source of execution errors, such as Java exceptions or incorrect property values.
+
+5.What the tracer tool consists of?
+A.the Tracer tool consists of the following:
+ ->play                                     ->save
+ ->pause                                    ->Remote tracer
+ ->settings                                 ->Watch
+ ->clear
+ ->Breakpoint
+
+6.why the colours are shown in the tracer tool?what are the colours shown?
+A.The Tracer tool uses a color code to display the records. 
+*Gray -represents activity processing
+*orange -represents events from flow, decision, or declarative rules
+*light blue represents PegaRULES database and cache operations.
+
+7.How does Pega-tracerviewer work?
+A.The Pega-TracerViewer tool presents and summarizes Tracer output data, that is saved in an .xml file, in an interactive table or tree         
+  format
+
+8.Does tracer impact application performance?
+A.Running the Tracer impacts application performance significantly due to the volume of data collected for rule execution. As a best  
+  practice, do not use the Tracer as a performance analysis tool
+
+9.What is the difference between a "step" and a "rule" in the Tracer tool?
+A.Tracer, a "step" represents an individual action or event within the execution of a rule or activity. A "rule" refers to the specific rule (e.g., an activity or decision rule) that is being executed. Tracer records each step within a rule's execution.
+
+10.How can you set trace points and breakpoints using the Tracer in Pega?
+A.You can set trace points by right-clicking on a rule or activity and selecting "Set Trace." To set breakpoints, use the "Stop at This Step" option in the Tracer           toolbar. This allows you to pause tracing when a specific step is reached.
+
+11.What is the purpose of the "Watch" feature in the Tracer, and how do you use it?
+A.The "Watch" feature allows you to monitor the values of specific properties during tracing. You can add properties to the watchlist, and the Tracer will display their     values as you step through the execution.
+
+12.What is the significance of the "Elapsed Time" column in the Tracer, and how can it be useful in debugging?
+A.The "Elapsed Time" column shows the time taken for each step or event to execute. It can help identify performance bottlenecks and inefficient parts of the application.
+
+13.What steps would you follow to analyze a problem using the Tracer tool?
+A.When analyzing a problem, start by setting up the Tracer, reproduce the issue, and then review the traced events. Look for errors, unexpected behavior, and performance issues. Use the Tracer's features, such as filtering, watchlists, and breakpoints, to gather relevant information.
+
+14.How can you filter the Tracer output to focus on specific events or rules?
+A.You can filter the Tracer output by various criteria, such as rule type, rule name, and execution status. Filtering helps you narrow down the events you want to analyze.
+
